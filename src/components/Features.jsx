@@ -9,27 +9,27 @@ const features = [
 
 function Features() {
   return (
-    <section id="activities" style={{ padding: "6rem 2rem", background: "#F9F4EE" }}>
+    <section id="activities" style={{ padding: "5rem 1.5rem", background: "#F9F4EE" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#BA7517", marginBottom: "0.75rem" }}>WHY CHOOSE US</p>
-        <h2 style={{ fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: "500", color: "#2C1A08", marginBottom: "3rem" }}>
+        <h2 style={{ fontSize: "clamp(1.5rem, 4vw, 2.25rem)", fontWeight: "500", color: "#2C1A08", marginBottom: "2.5rem" }}>
           The Irewe experience
         </h2>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.25rem" }}>
           {features.map((f, i) => (
             <div key={i} style={{
               background: "#fff",
               border: "0.5px solid rgba(186,117,23,0.2)",
               borderRadius: "12px",
-              padding: "1.75rem",
+              padding: "1.5rem",
             }}>
               <div style={{
-                width: "48px", height: "48px",
+                width: "44px", height: "44px",
                 background: "#FAEEDA",
                 borderRadius: "8px",
                 display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: "22px",
+                fontSize: "20px",
                 marginBottom: "1rem",
               }}>
                 {f.icon}

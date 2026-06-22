@@ -11,21 +11,26 @@ function Booking() {
     setForm({ checkin: "", checkout: "", guests: "" });
   };
 
+  const inputStyle = {
+    background: "rgba(255,255,255,0.1)",
+    border: "1px solid rgba(250,199,117,0.3)",
+    color: "#FAEEDA",
+    padding: "13px 16px",
+    borderRadius: "4px",
+    fontSize: "13px",
+    outline: "none",
+    width: "100%",
+    boxSizing: "border-box",
+  };
+
   return (
-    <section
-      id="booking"
-      style={{
-        background: "linear-gradient(135deg, #2C1A08 0%, #633806 60%, #854F0B 100%)",
-        padding: "6rem 2rem",
-        textAlign: "center",
-      }}
-    >
-      <div style={{ maxWidth: "700px", margin: "0 auto" }}>
+    <section id="booking" style={{ background: "linear-gradient(135deg, #2C1A08 0%, #633806 60%, #854F0B 100%)", padding: "5rem 1.5rem", textAlign: "center" }}>
+      <div style={{ maxWidth: "680px", margin: "0 auto" }}>
         <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#FAC775", marginBottom: "1rem" }}>RESERVATIONS</p>
-        <h2 style={{ fontSize: "clamp(1.75rem, 3vw, 2.25rem)", fontWeight: "500", color: "#FAEEDA", marginBottom: "1rem" }}>
+        <h2 style={{ fontSize: "clamp(1.5rem, 4vw, 2.25rem)", fontWeight: "500", color: "#FAEEDA", marginBottom: "1rem" }}>
           Ready to escape to Irewe?
         </h2>
-        <p style={{ color: "#D3D1C7", fontSize: "15px", marginBottom: "2.5rem", lineHeight: "1.7" }}>
+        <p style={{ color: "#D3D1C7", fontSize: "clamp(13px, 2vw, 15px)", marginBottom: "2.5rem", lineHeight: "1.7" }}>
           Reserve your stay today and experience island luxury like never before.
         </p>
 
@@ -35,32 +40,33 @@ function Booking() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} style={{ display: "flex", gap: "0.75rem", justifyContent: "center", flexWrap: "wrap" }}>
-          <input
-            type="date"
-            value={form.checkin}
-            onChange={(e) => setForm({ ...form, checkin: e.target.value })}
-            placeholder="Check-in"
-            style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(250,199,117,0.3)", color: "#FAEEDA", padding: "13px 16px", borderRadius: "4px", fontSize: "13px", outline: "none" }}
-          />
-          <input
-            type="date"
-            value={form.checkout}
-            onChange={(e) => setForm({ ...form, checkout: e.target.value })}
-            placeholder="Check-out"
-            style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(250,199,117,0.3)", color: "#FAEEDA", padding: "13px 16px", borderRadius: "4px", fontSize: "13px", outline: "none" }}
-          />
-          <input
-            type="number"
-            value={form.guests}
-            onChange={(e) => setForm({ ...form, guests: e.target.value })}
-            placeholder="Guests"
-            min="1"
-            style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(250,199,117,0.3)", color: "#FAEEDA", padding: "13px 16px", borderRadius: "4px", fontSize: "13px", outline: "none", width: "120px" }}
-          />
+        <form onSubmit={handleSubmit}>
+          {/* Responsive grid: 1 col on mobile, 3 on desktop */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "0.75rem", marginBottom: "1rem" }}>
+            <input
+              type="date"
+              value={form.checkin}
+              onChange={(e) => setForm({ ...form, checkin: e.target.value })}
+              style={inputStyle}
+            />
+            <input
+              type="date"
+              value={form.checkout}
+              onChange={(e) => setForm({ ...form, checkout: e.target.value })}
+              style={inputStyle}
+            />
+            <input
+              type="number"
+              value={form.guests}
+              onChange={(e) => setForm({ ...form, guests: e.target.value })}
+              placeholder="Guests"
+              min="1"
+              style={inputStyle}
+            />
+          </div>
           <button
             type="submit"
-            style={{ background: "#BA7517", color: "#FAEEDA", border: "none", padding: "13px 28px", borderRadius: "4px", fontSize: "14px", cursor: "pointer", letterSpacing: "1px" }}
+            style={{ background: "#BA7517", color: "#FAEEDA", border: "none", padding: "14px 32px", borderRadius: "4px", fontSize: "14px", cursor: "pointer", letterSpacing: "1px", width: "100%" }}
           >
             Check availability
           </button>

@@ -12,19 +12,40 @@ html {
 
 html, body, #root {
   overflow-x: hidden;
+  width: 100%;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   background: #fff;
+  -webkit-font-smoothing: antialiased;
 }
 
 input::placeholder {
   color: rgba(250, 199, 117, 0.45);
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Desktop nav visible, mobile hamburger hidden */
+.desktop-nav {
+  display: flex;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+/* Tablet and mobile */
 @media (max-width: 768px) {
   .desktop-nav {
     display: none !important;
+  }
+
+  .mobile-nav {
+    display: flex !important;
   }
 }
